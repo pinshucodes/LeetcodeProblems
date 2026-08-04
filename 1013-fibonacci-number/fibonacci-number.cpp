@@ -1,21 +1,13 @@
 class Solution {
 public:
-    int fibo(int n, vector<int>& v) {
-        if (n <= 1)
-            return n;
-        if (v[n] != -1)
-            return v[n];
-        return v[n] = fibo(n - 1, v) + fibo(n - 2, v);
-    }
     int fib(int n) {
-        // Time Complexity- O(n)
-        // space complexity- O(n)
-        vector<int> v(n+1, -1);
-        return fibo(n, v);
+        if(n<=1) return n;
+        int v[n+1];
+        v[0]=0;
+        v[1]=1;
+        for(int i = 2; i<=n; i++){
+            v[i]=v[i-1]+v[i-2];
+        }
+        return v[n];
     }
 };
-
-        // Time Complexity- O(2^n)
-        // space complexity- O(n)
-        // if (n <= 1) return n;
-        // return fib(n - 1) + fib(n - 2);
