@@ -2,7 +2,9 @@ class Solution {
 public:
     void rp(int s, int l, vector<int>& nums) {
         for (int i = s, j = l; i < j; i++, j--) {
-            swap(nums[i], nums[j]);
+            int temp=nums[i];
+            nums[i]=nums[j];
+            nums[j]=temp;
         }
     }
     void rotate(vector<int>& nums, int k) {
