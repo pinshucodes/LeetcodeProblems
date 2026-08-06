@@ -6,6 +6,7 @@ public:
             nums[i]=nums[j];
             nums[j]=temp;
         }
+        return;
     }
     void rotate(vector<int>& nums, int k) {
         int n = nums.size();
